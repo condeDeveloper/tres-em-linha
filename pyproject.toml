@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tres-em-linha"
+version = "1.0.0"
+description = "O problema dos tres em linha varrido na unha: as colocacoes de 2n pontos na grade n x n sem tres colineares, com a colinearidade julgada por dois caminhos."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "condeDeveloper" }]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Scientific/Engineering :: Mathematics",
+]
+
+[project.scripts]
+tresemlinha = "tresemlinha.__main__:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["tresemlinha*"]
+
+[tool.pytest.ini_options]
+testpaths = ["testes"]
+addopts = "-q"
